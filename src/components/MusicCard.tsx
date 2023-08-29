@@ -3,7 +3,7 @@ import { useLastFM } from 'use-last-fm'
 export const MusicCard = () => {
     const truncate = (str: string, n: number) => str.length > n ? str.substr(0, n - 1) + '...' : str;
     // The last.fm api keys aren't even private :skull:
-    const lastFM = useLastFM('MXLFRECORDS', "d50f317dd74a563605068aa18a28bf28", 5000, 'large');
+    const lastFM = useLastFM('MXLFRECORDS', "5307081fbea58764fe7512725b1645e9", 5000, 'large');
 
     if (['connecting', 'error'].includes(lastFM.status)) return null;
 
