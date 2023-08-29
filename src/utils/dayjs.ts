@@ -10,6 +10,6 @@ dayjs.extend(isBetween)
 dayjs.extend(advancedFormat)
 dayjs.extend(customParseFormat)
 dayjs.extend(timezone)
-dayjs.tz.setDefault('America/New_York')
+dayjs.tz.setDefault('Europe/Rome')
 
 export { dayjs }
