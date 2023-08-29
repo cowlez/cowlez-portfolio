@@ -47,10 +47,10 @@ dependencies:
   use-last-fm:
     specifier: ^0.6.1
     version: 0.6.1(react@18.2.0)
-  '@fortawesome/fontawesome-svg-core':
+  fortawesome/fontawesome-svg-core:
     specifier: ^1.2.36
     version: 1.2.36
-  '@fortawesome/react-fontawesome':
+  fortawesome/react-fontawesome:
     specifier: ^0.1.15
     version: 0.1.15(react@18.2.0)  
   framer-motion:
