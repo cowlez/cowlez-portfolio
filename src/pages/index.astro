@@ -24,14 +24,14 @@ import { Icon } from 'astro-icon'
 
 	const weather_element = document.getElementById(`weather`);
 	if (weather_element) {
-		weather_element.innerHTML = weather_element.innerHTML = `${Math.round(temp_f)}°F`;
+		weather_element.innerHTML = weather_element.innerHTML = `${Math.round(temp_c)}°C`;
 
 		weather_element.addEventListener('mouseover', () => {
-			weather_element.innerHTML = `${Math.round(temp_c)}°C`;
+			weather_element.innerHTML = `${Math.round(temp_f)}°F`;
 		});
 
 		weather_element.addEventListener('mouseout', () => {
-			weather_element.innerHTML = `${Math.round(temp_f)}°F`;
+			weather_element.innerHTML = `${Math.round(temp_c)}°C`;
 		});
 	}
 </script>
