@@ -6,7 +6,7 @@ const now = () => dayjs().tz()
 const events = {
   christmas: [25, 12],
   newYear: [1, 1],
-  birthday: [07, 14],
+  birthday: [7, 14],
 }
 
 
