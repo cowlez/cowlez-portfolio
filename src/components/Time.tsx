@@ -6,7 +6,7 @@ const now = () => dayjs().tz()
 const events = {
   christmas: [25, 12],
   newYear: [1, 1],
-  birthday: [12, 29],
+  birthday: [07, 14],
 }
 
 
@@ -24,7 +24,7 @@ const Time = () => {
 
   return (
     <p className="inline">
-      {date.format('MMMM Do, YYYY • hh:mm:ss A')}{' '}
+      {date.format('Do MMMM, YYYY • hh:mm:ss A')}{' '}
       {currentEvent && (
         <span className="font-bold">
           —{' '}
