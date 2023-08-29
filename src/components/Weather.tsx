@@ -38,7 +38,7 @@ export const Weather = () => {
       It's currently{' '}
       {(celsius < 8 && <span className="mr-1">❄️</span>) ||
         (celsius > 30 && <span className="mr-1">🔥</span>)}
-      <span onMouseOver={toggleTemperature} onMouseLeave={toggleTemperature} className="font-bold">
+      <span onMouseOver={toggleTemperature} onMouseLeave={toggleTemperature} className="font-medium">
         {useCelsius ? `${Math.round(celsius)} °C` : `${Math.round(fahrenheit)} °F`}
       </span>{' '}
       <span className="text-xs">({weatherDescription})</span> in{' '}
