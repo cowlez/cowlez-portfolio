@@ -47,6 +47,21 @@ dependencies:
   use-last-fm:
     specifier: ^0.6.1
     version: 0.6.1(react@18.2.0)
+  fortawesome/fontawesome-svg-core:
+    specifier: ^1.2.36
+    version: 1.2.36
+  fortawesome/react-fontawesome:
+    specifier: ^0.1.15
+    version: 0.1.15(react@18.2.0)  
+  framer-motion:
+    specifier: ^5.5.0
+    version: 5.5.0(react@18.2.0)
+  swr:
+    specifier: ^1.0.0
+    version: 1.0.0(react@18.2.0)
+  types/weather:
+    specifier: ^0.0.1
+    version: 0.0.1     
 
 devDependencies:
   '@tailwindcss/typography':
