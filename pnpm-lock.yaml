@@ -63,4 +63,4 @@ packages:
       - supports-color
 
   '@fortawesome/react-fontawesome':
-    version: ^5.15.3
+    version: ^0.2.0
