@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Icon } from "react-icons/fa";
+import { Icon } from "@fortawesome/react-fontawesome";
 
 const Weather = () => {
   const [weather, setWeather] = useState({

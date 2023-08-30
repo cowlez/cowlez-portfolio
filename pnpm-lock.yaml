@@ -62,5 +62,5 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  '@fortawesome/react-icons':
+  '@fortawesome/react-fontawesome':
     version: ^5.15.3
