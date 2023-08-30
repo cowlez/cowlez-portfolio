@@ -9,7 +9,7 @@ const Weather = () => {
 
   // Get the weather for Padova from OpenWeatherMap
   const fetchWeather = async () => {
-    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Padova&units=metric&appid=YOUR_API_KEY");
+    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Padova&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967");
     const data = await response.json();
 
     setWeather(data);
