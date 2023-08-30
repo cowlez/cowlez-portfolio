@@ -20,7 +20,7 @@ import { Icon } from 'astro-icon'
 <Layout>
 	<!-- Hero -->
 	<h1 class="mb-1">I'm <span class="bg-gradient-to-r from-blue-600 to-[#ff6c7b] dark:from-blue-300 dark:to-[#ffacb4] animate-[gradient_3s_ease-in-out_infinite] clip">Reizy</span>!</h1>
-	<Weather client:only="react" />
+	<Weather />
 	<h4 class="font-normal mb-4"><Icon name="mdi:clock" class="fill-neutral-900 dark:fill-white h-5 inline" /> <Time client:only="react" /></h4>
 	<div class="grid grid-flow-col w-48 mt-3 text-lg mb-5">
 		<SocialIcon name="Twitter" href="https://twitter.com/reizyishere" icon="mdi:twitter" />
