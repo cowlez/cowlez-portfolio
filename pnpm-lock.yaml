@@ -61,3 +61,6 @@ packages:
       react-dom: 18.2.0
     transitivePeerDependencies:
       - supports-color
+
+  '@fortawesome/react-icons':
+    version: ^5.15.3
