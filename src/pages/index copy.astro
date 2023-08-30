@@ -2,10 +2,11 @@
 import Layout from '@layouts/Default.astro';
 
 import { MusicCard } from '@components/MusicCard';
+
+import Time from '@components/Time';
 import { IconName } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Weather } from 'components/Weather'
-import Time from '@components/Time';
+import { Weather } from '@components/Weather'
 import VSCodeCard from '@components/VSCodeCard';
 import PlexCard from '@components/PlexCard';
 import ProjectCard from '@components/ProjectCard.astro';
@@ -14,8 +15,6 @@ import SocialIcon from '@components/SocialIcon.astro';
 
 import { Icon } from 'astro-icon'
 ---
-
-
 <Layout>
 	<!-- Hero -->
 	<h1 class="mb-1">I'm <span class="bg-gradient-to-r from-blue-600 to-[#ff6c7b] dark:from-blue-300 dark:to-[#ffacb4] animate-[gradient_3s_ease-in-out_infinite] clip">Reizy</span>!</h1>

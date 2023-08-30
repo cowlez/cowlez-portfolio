@@ -1,0 +1,43 @@
+
+<script>
+	// Weather
+	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Padova&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const data = await res.json();
+	const temp_f = data.main.temp;
+
+	const res2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Padova&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const data2 = await res2.json();
+	const temp_c = data2.main.temp;
+
+	const weather_element = document.getElementById(`weather`);
+	if (weather_element) {
+		weather_element.innerHTML = weather_element.innerHTML = `${Math.round(temp_c)}°C`;
+
+		weather_element.addEventListener('mouseover', () => {
+			weather_element.innerHTML = `${Math.round(temp_f)}°F`;
+		});
+
+		weather_element.addEventListener('mouseout', () => {
+			weather_element.innerHTML = `${Math.round(temp_c)}°C`;
+		});
+	}
+</script>
+
+<motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+	It's currently{' '}
+	{(celsius < 8 && <span className="mr-1">❄️</span>) ||
+	  (celsius > 30 && <span className="mr-1">🔥</span>)}
+	<span onMouseOver={toggleTemperature} onMouseLeave={toggleTemperature} className="font-bold">
+	  {useCelsius ? `${Math.round(celsius)} °C` : `${Math.round(fahrenheit)} °F`}
+	</span>{' '}
+	<span className="text-xs">({weatherDescription})</span> in{' '}
+	<a
+	  href="https://weather.com/en-GB/weather/today/l/51.49,-0.14"
+	  rel="noopener noreferrer"
+	  target="_blank"
+	  className="font-bold focus:outline-none transition duration-300 ease-in-out hover:text-indigo-900 dark:hover:text-indigo-200"
+	>
+	  London
+	</a>
+	.
+  </motion.p>
