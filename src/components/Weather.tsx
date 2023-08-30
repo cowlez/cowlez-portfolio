@@ -1,56 +1,58 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import useSWR from 'swr'
-import { WeatherResponse } from 'types/weather'
+import React, { useState, useEffect } from "react";
+import { Icon } from "react-icons/fa";
 
-export const Weather = () => {
-  const [useCelsius, setCelsius] = useState(true)
+const Weather = () => {
+  const [weather, setWeather] = useState({
+    condition: "clear-day",
+    temperature: 25,
+  });
 
-  const { data }: { data?: WeatherResponse } = useSWR('weather')
+  // Get the weather for Padova from OpenWeatherMap
+  const fetchWeather = async () => {
+    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Padova&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967");
+    const data = await response.json();
 
-  if (!data) return null
+    setWeather(data);
+  };
 
-  const { main: weatherName, description: weatherDescription } = data.weather[0]
-  const { temp: celsius } = data.main
+  useEffect(() => {
+    fetchWeather();
+  }, []);
 
-  const fahrenheit = (celsius * 9) / 5 + 32
-  const toggleTemperature = () => setCelsius((celsius) => !celsius)
+  // Return the weather icon
+  const weatherIcon = () => {
+    switch (weather.condition) {
+      case "clear-day":
+        return <Icon name="sun" />;
+      case "clouds":
+        return <Icon name="cloud" />;
+      case "rain":
+        return <Icon name="cloud-rain" />;
+      default:
+        return <Icon name="thermometer" />;
+    }
+  };
+
+  // Return the temperature in Fahrenheit if the cursor is over it
+  const temperatureInFahrenheit = () => {
+    return weather.temperature * 9 / 5 + 32;
+  };
 
   return (
-    <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-      <FontAwesomeIcon
-        icon={
-          ({
-            Snow: ['far', 'cloud-snow'],
-            Thunderstorm: ['far', 'thunderstorm'],
-            Rain: ['far', 'cloud-showers-heavy'],
-            Drizzle: ['far', 'cloud-rain'],
-            Mist: ['far', 'cloud-rain'],
-            Clouds: ['far', 'clouds'],
-            Clear: ['far', 'cloud-sun'],
-            Haze: ['far', 'sun-haze'],
-          }[weatherName] as IconProp) || ['far', 'cloud']
-        }
-        className="mr-2"
-      />
-      It's currently{' '}
-      {(celsius < 8 && <span className="mr-1">❄️</span>) ||
-        (celsius > 30 && <span className="mr-1">🔥</span>)}
-      <span onMouseOver={toggleTemperature} onMouseLeave={toggleTemperature} className="font-bold">
-        {useCelsius ? `${Math.round(celsius)} °C` : `${Math.round(fahrenheit)} °F`}
-      </span>{' '}
-      <span className="text-xs">({weatherDescription})</span> in{' '}
-      <a
-        href="https://api.openweathermap.org/data/2.5/weather?q=Padova&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967"
-        rel="noopener noreferrer"
-        target="_blank"
-        className="font-bold focus:outline-none transition duration-300 ease-in-out hover:text-indigo-900 dark:hover:text-indigo-200"
-      >
-        London
-      </a>
-      .
-    </motion.p>
-  )
-}
+    <div>
+      <p>
+        Temperature: {
+          !event.target.contains(event.relatedTarget) ? weather.temperature : temperatureInFahrenheit()
+        }°C
+      </p>
+      <p>
+        Conditions: {weather.condition}
+      </p>
+      <p>
+        {weatherIcon()}
+      </p>
+    </div>
+  );
+};
+
+export default Weather;
