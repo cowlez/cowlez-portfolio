@@ -14,31 +14,6 @@ import SocialIcon from '@components/SocialIcon.astro';
 
 import { Icon } from 'astro-icon'
 ---
-
-<script>
-	// Weather
-	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Padova&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
-	const data = await res.json();
-	const temp_f = data.main.temp;
-
-	const res2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Padova&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
-	const data2 = await res2.json();
-	const temp_c = data2.main.temp;
-
-	const weather_element = document.getElementById(`weather`);
-	if (weather_element) {
-		weather_element.innerHTML = weather_element.innerHTML = `${Math.round(temp_c)}°C`;
-
-		weather_element.addEventListener('mouseover', () => {
-			weather_element.innerHTML = `${Math.round(temp_f)}°F`;
-		});
-
-		weather_element.addEventListener('mouseout', () => {
-			weather_element.innerHTML = `${Math.round(temp_c)}°C`;
-		});
-	}
-</script>
-
 <Layout>
 	<!-- Hero -->
 	<h1 class="mb-1">I'm <span class="bg-gradient-to-r from-blue-600 to-[#ff6c7b] dark:from-blue-300 dark:to-[#ffacb4] animate-[gradient_3s_ease-in-out_infinite] clip">Reizy</span>!</h1>
