@@ -50,9 +50,6 @@ import { Icon } from 'astro-icon'
 		<SocialIcon name="Discord" href="discord.com/users/921732185562685492" icon="ic:baseline-discord" />
 		<SocialIcon name="Email" href="mailto:hi@reizy.eu" icon="mdi:email" />
 	</div>
-	<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-		<MusicCard client:only="react" />
-	</div>
 <div id="donate-button-container">
 <div id="donate-button"></div>
 <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
@@ -68,5 +65,8 @@ title:'PayPal - The safer, easier way to pay online!',
 }).render('#donate-button');
 </script>
 </div>
+	<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+		<MusicCard client:only="react" />
+	</div>
 
 </Layout>
