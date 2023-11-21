@@ -53,4 +53,20 @@ import { Icon } from 'astro-icon'
 	<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
 		<MusicCard client:only="react" />
 	</div>
+<div id="donate-button-container">
+<div id="donate-button"></div>
+<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+<script>
+PayPal.Donation.Button({
+env:'production',
+hosted_button_id:'TBHTCPDJ4ZJFA',
+image: {
+src:'https://pics.paypal.com/00/s/ODNiMjUyZmItMGRiNy00NTNjLWE2ZTAtYzEyNDk5M2Y3ZThk/file.PNG',
+alt:'Donate with PayPal button',
+title:'PayPal - The safer, easier way to pay online!',
+}
+}).render('#donate-button');
+</script>
+</div>
+
 </Layout>
