@@ -14,7 +14,33 @@ import SocialIcon from '@components/SocialIcon.astro';
 
 import { Icon } from 'astro-icon'
 ---
+<script>
+  const select = document.getElementById("themeSwitch") as HTMLSelectElement;
+  const theme = localStorage.getItem("theme");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 
+  if (theme !== null) {
+    select.value = theme;
+  } else {
+    select.value = systemTheme;
+  }
+
+  function updateTheme(value) {
+    const theme = value === "system" ? systemTheme : value;
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+    localStorage.setItem("theme", value);
+  }
+
+  updateTheme(select.value);
+
+  select.addEventListener("change", (event: Event) => {
+    const select = event.target as HTMLSelectElement;
+    updateTheme(select.value);
+  });
+</script>
 <script>
 	// Weather
 	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Padova&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
