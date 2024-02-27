@@ -1,1 +1,31 @@
+---
+interface Props {
+    title?: string;
+}
+const { title } = Astro.props;
+        
+import '@styles/global.css';
 
+import Meta from '@components/Meta.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en" class="bg-white-200 light:bg-white-900 text-black light:text-white">
+    <head>
+        <Meta title={title || "Reizy"} />
+    </head>
+
+    <body class="p-[50px]">
+        <a rel="me" href="https://reizy.eu" style={{"display": "none"}}></a>
+        
+        <Header />
+        
+        <main>
+            <slot />
+        </main>
+
+        <Footer />
+    </body>
+</html>
