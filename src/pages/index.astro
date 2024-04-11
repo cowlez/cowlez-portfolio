@@ -43,7 +43,7 @@ import { Icon } from 'astro-icon'
 </script>
 <script>
 	// Weather
-	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Cordignanoa&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Cordignano&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
 	const data = await res.json();
 	const temp_f = data.main.temp;
 
