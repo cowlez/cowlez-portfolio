@@ -43,11 +43,11 @@ import { Icon } from 'astro-icon'
 </script>
 <script>
 	// Weather
-	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Padova&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Cordignanoa&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
 	const data = await res.json();
 	const temp_f = data.main.temp;
 
-	const res2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Padova&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const res2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Cordignano&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
 	const data2 = await res2.json();
 	const temp_c = data2.main.temp;
 
@@ -64,24 +64,18 @@ import { Icon } from 'astro-icon'
 		});
 	}
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1681943710069596"
-     crossorigin="anonymous"></script>
 <Layout>
-	<!-- Hero -->
-	<h1 class="mb-1">
-		I'm	<span style="color: #D60270;">Re</span><span style="color: #9B4F96;">i</span><span style="color: #0038A8;">zy</span></span>!
-	</h1>
+	<h1 class="mb-1">I'm <span class="bg-gradient-to-r from-blue-600 to-[#ff6c7b] dark:from-blue-300 dark:to-[#ffacb4] animate-[gradient_3s_ease-in-out_infinite] clip">cowlez</span>!</h1>
 	<h3 class="font-normal mb-2"><span id="weather" class="font-medium">Loading weather</span> in Padua, Veneto, Italy</h3>
 	<h4 class="font-normal mb-4"><Icon name="mdi:clock" class="fill-neutral-900 dark:fill-white h-5 inline" /> <Time client:only="react" /></h4>
 	<div class="grid grid-flow-col w-48 mt-3 text-lg mb-5">
-		<SocialIcon name="Twitter" href="https://twitter.com/reizyishere" icon="mdi:twitter" />
-		<SocialIcon name="GitHub" href="https://github.com/P0rc0D10" icon="mdi:github" />
-		<SocialIcon name="Discord" href="https://discord.com/users/921732185562685492" icon="ic:baseline-discord" />
-		<SocialIcon name="Email" href="mailto:hi@reizy.eu" icon="mdi:email" />
+		<SocialIcon name="Instagram" href="https://instagram.com/leooolllll" icon="mdi:instagram" />
+		<SocialIcon name="PayPal" href="https://paypal.me/MrCowLess" icon="mdi:paypal" />
+		<SocialIcon name="Discord" href="https://discord.com/users/1190035192816083076" icon="ic:baseline-discord" />
+		<SocialIcon name="Email" href="mailto:leo@cowlez.eu" icon="mdi:email" />
 	</div>
 
 	<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
 		<MusicCard client:only="react" />
 	</div>
-<meta name="google-adsense-account" content="ca-pub-1681943710069596">
 </Layout>

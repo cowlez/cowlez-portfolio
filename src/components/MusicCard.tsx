@@ -3,13 +3,13 @@ import { useLastFM } from 'use-last-fm'
 export const MusicCard = () => {
     const truncate = (str: string, n: number) => str.length > n ? str.substr(0, n - 1) + '...' : str;
     // The last.fm api keys aren't even private :skull:
-    const lastFM = useLastFM('MXLFRECORDS', "5307081fbea58764fe7512725b1645e9", 5000, 'large');
+    const lastFM = useLastFM('cowlez', "70a9b6cf74b6b6d5e3b72c98dcce7400", 5000, 'large');
 
     if (['connecting', 'error'].includes(lastFM.status)) return null;
 
     return (
         <a
-            href={lastFM.status === 'playing' ? lastFM.song.url : 'https://last.fm/MXLFRECORDS'}
+            href={lastFM.status === 'playing' ? lastFM.song.url : 'https://last.fm/cowlez'}
             rel="noopener noreferrer"
             target="_blank"
             className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 dark:border-gray-400 shadow flex flex-row max-w-sm"
